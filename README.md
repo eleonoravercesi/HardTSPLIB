@@ -34,8 +34,8 @@ These are 7 instances used to produce the results in Figure 2:
 The folder HardTSPLIB has the following structure:
 
 ```
-????????? instances
-????????? solve.py
+├──instances
+├──solve.py
 ```
 
 The script `solve.py` allows you to test our instances using `concorde`.
