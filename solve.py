@@ -23,6 +23,14 @@ if __name__ == "__main__":
     instance_path = args.instance
     seed = args.seed
 
+    # Check if concorde is installed
+    print("Checking if concorde exists")
+    try:
+        subprocess.run("{}/concorde".format(concorde_path), shell=True)
+    except:
+        raise ValueError("Concorde not found")
+
+
     # Create a directory for the solution (if does not exist yes)
     try:
         os.makedirs('sol')
@@ -38,10 +46,13 @@ if __name__ == "__main__":
 
 
     # Set a name for the solution file (derived from the original name)
-    solution_filename = "../sol/{}.sol".format(instance_path.split("/")[2].split(".")[0])
+    solution_filename = "../sol/{}.sol".format(instance_path.split("/")[1].split(".")[0])
 
     # Add an extra-dot to the instance, as we are in the folder "run"
-    instance_path = "." + instance_path
+    if instance_path[0] == '.':
+        instance_path = "." + instance_path
+    else:
+        instance_path = "../" + instance_path
 
     # Run concorde on the specify instance
     subprocess.run("{}/concorde -x -s {} -o {} {}".format(concorde_path, seed, solution_filename, instance_path), shell=True)
