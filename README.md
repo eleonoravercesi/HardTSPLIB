@@ -36,6 +36,7 @@ The folder HardTSPLIB has the following structure:
 ```
 ├──instances
 ├──solve.py
+├──README.md
 ```
 
 The script `solve.py` allows you to test our instances using `concorde`.
@@ -61,8 +62,8 @@ Where `your/concorde/path` stands for the directory where you have the executabl
 This script creates a folder `run`, where it saves all the intermediate files of `concorde`, and a folder `sol`
 where it saves the optimal tour.
 
-[1] David, V. C., et al. "The traveling salesman problem: A computational study." (2006).
+[1] [Applegate, D., Bixby, R., Cook, W., & Chvátal, V. (1998). On the solution of traveling salesman problems.](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=c69d85c8a62d7ec79a4c77cef0824828d99aedbe)
 
-[2] Reinelt, Gerhard. "TSPLIB???A traveling salesman problem library." ORSA journal on computing 3.4 (1991): 376-384.
+[2] [Reinelt, G. (1991). TSPLIB—A traveling salesman problem library. ORSA journal on computing, 3(4), 376-384.](https://pubsonline.informs.org/doi/abs/10.1287/ijoc.3.4.376)
 
-[3] Zhong, Xianghui. "Lower Bounds on the Integraliy Ratio of the Subtour LP for the Traveling Salesman Problem." arXiv preprint arXiv:2102.04765 (2021).
+[3] [Zhong, X. (2021). Lower Bounds on the Integraliy Ratio of the Subtour LP for the Traveling Salesman Problem. arXiv preprint arXiv:2102.04765.](https://arxiv.org/abs/2102.04765)
