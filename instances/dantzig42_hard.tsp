@@ -1,5 +1,5 @@
 NAME:dantzig42_hard
-COMMENT: From "On the generation of Metric TSP instances with a large integrality gap by branch-and-cut" (Vercesi, Gualandi, Mastrolilli, Gambardella)
+COMMENT: From "On the generation of Metric TSP instances with a large integrality gap by branch-and-cut" (Vercesi, Gualandi, Mastrolilli, Gambardella) - https://arxiv.org/abs/2109.02454
 TYPE: TSP
 DIMENSION: 42
 EDGE_WEIGHT_TYPE: EXPLICIT
