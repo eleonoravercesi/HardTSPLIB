@@ -1,6 +1,6 @@
 # On the generation of Metric TSP instances with a large integrality gap by branch-and-cut
 
-In our paper "[On the generation of Metric TSP instances with a large integrality gap by branch-and-cut](https://arxiv.org/abs/2109.02454)" (to appear in Math. Prog. Comp.)  we introduce the `HardTSPLIB`, a family of 41 metric TSP instances hard to solve for `concorde` [1]
+In our paper "[On the generation of Metric TSP instances with a large integrality gap by branch-and-cut](https://link.springer.com/article/10.1007/s12532-023-00235-7)  we introduce the `HardTSPLIB`, a family of 41 metric TSP instances hard to solve for `concorde` [1]
 
 In this README, we provide a brief description of how to test the complexity of our code.
 Such instances are divided as follows:
