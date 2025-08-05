@@ -28,7 +28,8 @@ if __name__ == "__main__":
     # Check if concorde is installed
     print("Checking if concorde exists")
     try:
-        subprocess.run("{}/concorde".format(concorde_path), shell=True)
+        assert os.path.exists(concorde_path + "/concorde")
+        print("\t Yes")
     except:
         raise ValueError("Concorde not found")
 
@@ -36,6 +37,7 @@ if __name__ == "__main__":
     print("Checking if LKH3 exists")
     try:
         assert os.path.exists(lkh3_path + "/LKH")
+        print("\t Yes")
     except:
         raise ValueError("LKH3 not found, please install it from http://webhotel4.ruc.dk/~keld/research/LKH-3/ or specify the correct path")
 
@@ -64,7 +66,7 @@ if __name__ == "__main__":
         instance_path = "../" + instance_path
 
     # Run concorde on the specify instance
-    subprocess.run("{}/concorde -x -s {} -o {} {}".format(concorde_path, seed, solution_filename, instance_path), shell=True)
+    subprocess.run("{}/concorde -x -s {} -o {} {} > logC.log".format(concorde_path, seed, solution_filename, instance_path), shell=True)
 
     # Create a LKH3 par file in the run folder
     '''
@@ -76,5 +78,5 @@ if __name__ == "__main__":
         f.write("RUNS = 1\n")
 
     # Run LKH3 on the instance
-    subprocess.run("{}/LKH LKH.par".format(lkh3_path), shell=True)
+    subprocess.run("{}/LKH LKH.par > logL.log".format(lkh3_path), shell=True)
 
