@@ -69,9 +69,6 @@ if __name__ == "__main__":
     subprocess.run("{}/concorde -x -s {} -o {} {} > logC.log".format(concorde_path, seed, solution_filename, instance_path), shell=True)
 
     # Create a LKH3 par file in the run folder
-    '''
-    PROBLEM_FILE = pr2392.tsp
-    '''
     with open("LKH.par", "w") as f:
         f.write("PROBLEM_FILE = {}\n".format(instance_path))
         f.write("SEED = {}\n".format(seed))
@@ -89,8 +86,8 @@ if __name__ == "__main__":
         lines = f.readlines()
         print("\t Concorde solution:", lines[-3].strip())
 
-    # LKH3 solution is at line -5 of the log
+    # LKH3 solution is at line -6 of the log
     with open("logL.log", "r") as f:
         lines = f.readlines()
-        print("\t LKH3 solution:", lines[-5].strip())
+        print("\t LKH3 solution:", lines[-6].strip())
 
