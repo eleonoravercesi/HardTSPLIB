@@ -66,6 +66,7 @@ if __name__ == "__main__":
         instance_path = "../" + instance_path
 
     # Run concorde on the specify instance
+    print("Running Concorde on instance", instance_path)
     subprocess.run("{}/concorde -x -s {} -o {} {} > logC.log".format(concorde_path, seed, solution_filename, instance_path), shell=True)
 
     # Create a LKH3 par file in the run folder
@@ -75,19 +76,23 @@ if __name__ == "__main__":
         f.write("RUNS = 1\n")
 
     # Run LKH3 on the instance
+    print("Running LKH3 on instance", instance_path)
     subprocess.run("{}/LKH LKH.par > logL.log".format(lkh3_path), shell=True)
 
     # Print the optimal value of Concorde
     print("------------------------------")
-    print("Instance →", instance_path.split("/")[1])
+    print("Instance →", instance_path.split("/")[-1])
 
     # Concorde solution is at line -3 of the log
     with open("logC.log", "r") as f:
         lines = f.readlines()
         print("\t Concorde solution:", lines[-3].strip())
+        print("\t Concorde runtime: ", lines[-1].strip())
 
     # LKH3 solution is at line -6 of the log
     with open("logL.log", "r") as f:
         lines = f.readlines()
         print("\t LKH3 solution:", lines[-6].strip())
+        print("\t LKH3 runtime: ", lines[-2].strip())
+    print("------------------------------")
 
